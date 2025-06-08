@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>愿石 WishStone - 专属祈福页</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card blessing">
+        <h1>愿石 WishStone</h1>
+        <p class="subtitle" id="venueTitle">加载中...</p>
+
+        <div class="block">
+          <h2>你的心愿</h2>
+          <p id="wishText"></p>
+          <audio id="wishAudio" controls hidden></audio>
+        </div>
+
+        <div class="block">
+          <h2 id="roleTitle">守护者回应</h2>
+          <p id="replyText"></p>
+          <audio id="replyAudio" controls></audio>
+        </div>
+
+        <div class="block">
+          <h2>NFC 绑定</h2>
+          <div class="row">
+            <input id="nfcUid" placeholder="输入 NFC UID" />
+            <input id="sku" placeholder="纪念品 SKU（可选）" />
+          </div>
+          <button id="bindBtn" class="btn">绑定当前祈福记录</button>
+          <p id="bindResult" class="meta"></p>
+        </div>
+      </section>
+    </main>
+    <script src="/blessing.js"></script>
+  </body>
+</html>

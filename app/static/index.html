@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>愿石 WishStone - 祈福装置</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container kiosk">
+      <section class="card">
+        <h1>愿石 WishStone</h1>
+        <p class="subtitle">良渚文化博物馆 · 祈福体验</p>
+
+        <label for="wishInput">输入或语音说出你的心愿</label>
+        <textarea id="wishInput" rows="4" placeholder="例如：希望今年考研顺利，也希望家人平安健康"></textarea>
+
+        <div class="row">
+          <button id="recordBtn" class="btn secondary">开始录音</button>
+          <button id="submitBtn" class="btn">生成祈福回应</button>
+        </div>
+
+        <audio id="previewAudio" controls hidden></audio>
+
+        <section id="result" class="result" hidden>
+          <h2>守护者回应</h2>
+          <p id="replyText"></p>
+          <div class="row">
+            <a id="blessingLink" class="btn" target="_blank">打开专属回听页</a>
+          </div>
+          <div class="meta" id="meta"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/kiosk.js"></script>
+  </body>
+</html>

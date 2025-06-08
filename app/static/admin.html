@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>愿石 WishStone - 管理后台</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>愿石 WishStone 管理后台</h1>
+        <p class="subtitle">输入管理 Token 后可查看统计、审核会话、修改 Prompt</p>
+
+        <div class="row">
+          <input id="adminToken" placeholder="X-Admin-Token" />
+          <button id="loadBtn" class="btn">加载数据</button>
+        </div>
+        <p class="meta">默认 Token: <code>wishstone-admin</code>（可通过环境变量 <code>ADMIN_TOKEN</code> 覆盖）</p>
+
+        <section class="block">
+          <h2>统计概览</h2>
+          <div id="stats" class="meta">未加载</div>
+        </section>
+
+        <section class="block">
+          <h2>Prompt 配置（良渚）</h2>
+          <div class="row">
+            <input id="roleName" placeholder="角色名" />
+          </div>
+          <div class="row">
+            <textarea id="systemPrompt" rows="3" placeholder="系统提示词"></textarea>
+          </div>
+          <div class="row">
+            <textarea id="responseStyle" rows="2" placeholder="回复风格"></textarea>
+          </div>
+          <div class="row">
+            <textarea id="forbiddenRules" rows="2" placeholder="禁止规则"></textarea>
+          </div>
+          <div class="row">
+            <button id="savePromptBtn" class="btn">保存 Prompt</button>
+          </div>
+          <p id="promptStatus" class="meta"></p>
+        </section>
+
+        <section class="block">
+          <h2>会话审核</h2>
+          <div id="sessions"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/admin.js"></script>
+  </body>
+</html>

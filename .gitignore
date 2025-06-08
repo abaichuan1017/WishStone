@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+app/wishstone.db
+app/storage/user_audio/*
+app/storage/ai_audio/*
+!.gitkeep
