@@ -5,14 +5,14 @@
 <h1 align="center">愿石 WishStone · 2.0</h1>
 
 <p align="center">一念有声 · 心愿有形</p>
-<p align="center"><a href="LICENSE">个人免费学习 · 禁止商业与盈利使用</a></p>
+<p align="center"><a href="LICENSE">禁止商业与盈利使用</a></p>
 <p align="center">
   <a href="docs/workflow.md">工作流与接口</a> ·
   <a href="examples/venues/liangzhu.json">良渚示例配置</a> ·
   <a href="docs/raspberry-pi.md">树莓派部署</a>
 </p>
 
-**面向文化空间的语音祈愿交互工作流，源码公开供个人免费学习。**
+**面向文化空间的语音祈愿交互工作流。**
 
 WishStone 将一句心愿转化为一份可被触摸、可再次访问的文化记忆。适用于博物馆、寺庙、古迹等空间，文化语境、祈福类别、回应文案与纪念品由场景配置。仓库提供**良渚博物馆配置示例**，不代表馆方合作或授权。
 
@@ -159,8 +159,8 @@ node --test tests/recorder.test.mjs
 
 ## 许可证
 
-本项目采用 [愿石个人学习许可证 1.0](LICENSE)，免费供个人非商业学习、研究和私人实验。
+本项目采用 [PolyForm Noncommercial License 1.0.0](LICENSE)，免费允许非商业学习、研究与实验。未由该许可证许可的商业或盈利使用须另行取得授权。
 
-**禁止商业或盈利使用**，包括商业部署、收费体验、付费定制与托管，以及销售相关装置、纪念品或 NFC 产品。其他用途须事先取得单独书面授权。
+该许可证也允许其列明的慈善、教育、公共研究和政府等机构使用，具体范围以许可证原文为准。第三方代码、模型、数据和素材遵循各自许可。
 
-分享源码及其修改版时须保留许可证、版权与第三方声明。第三方代码、模型、数据和素材遵循各自许可。
+Required Notice: Copyright (c) 2026 abaichuan1017 and WishStone contributors.

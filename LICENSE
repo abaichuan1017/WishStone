@@ -1,142 +1,131 @@
-WishStone Personal Learning License 1.0
-愿石个人学习许可证 1.0
+# PolyForm Noncommercial License 1.0.0
 
-Copyright (c) 2026 abaichuan1017 and WishStone contributors.
-保留所有未明确授予的权利。
+<https://polyformproject.org/licenses/noncommercial/1.0.0>
 
-中文条款
+## Acceptance
 
-1. 适用范围
+In order to get any license under these terms, you must agree
+to them as both strict obligations and conditions to all
+your licenses.
 
-本许可证适用于本仓库中由 WishStone 权利人拥有著作权的源代码、文档、
-配置示例、图标和其他原创资源，以下统称“本作品”。第三方材料除外。
+## Copyright License
 
-2. 个人免费学习许可
+The licensor grants you a copyright license for the
+software to do everything you might do with the software
+that would otherwise infringe the licensor's copyright
+in it for any permitted purpose.  However, you may
+only distribute the software according to [Distribution
+License](#distribution-license) and make changes or new works
+based on the software according to [Changes and New Works
+License](#changes-and-new-works-license).
 
-在遵守本许可证的前提下，权利人免费授予自然人一项非独占、不可转授权的
-有限许可，仅为个人非商业学习、研究和私人实验，查看、下载、复制、运行
-和修改本作品。
+## Distribution License
 
-允许为上述个人学习目的在代码托管平台创建分叉，或免费分享源码及修改后的
-源码，但必须完整保留本许可证、版权声明和第三方声明，明确标注修改，并
-使接收者受到相同限制。该分享许可不包括公开运营应用、托管服务或经营活动。
+The licensor grants you an additional copyright license
+to distribute copies of the software.  Your license
+to distribute covers distributing the software with
+changes and new works permitted by [Changes and New Works
+License](#changes-and-new-works-license).
 
-个人学习不包括代表雇主、客户或其他组织开展业务、开发交付物或部署服务。
-组织或机构使用，以及超出上述范围的其他使用，须事先取得权利人单独的
-书面授权。
+## Notices
 
-3. 禁止商业与盈利使用
+You must ensure that anyone who gets a copy of any part of
+the software from you also gets a copy of these terms or the
+URL for them above, as well as copies of any plain-text lines
+beginning with `Required Notice:` that the licensor provided
+with the software.  For example:
 
-未经权利人事先单独书面授权，不得将本作品、其修改版或基于其形成的衍生
-作品用于任何直接或间接的商业、经营或盈利目的。禁止的行为包括但不限于：
+> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
 
-- 销售、出租、付费许可本作品，或通过订阅、广告、赞助、分成等方式获利；
-- 提供收费的开发、定制、安装、部署、运维、培训、咨询或托管服务；
-- 用于商业场馆、收费体验、商业展陈、客户项目、企业内部业务或营销获客；
-- 生产、销售与本作品结合的装置、纪念品、NFC 产品或 3D 定制产品；
-- 将本作品集成进商业软件、硬件、平台或服务，即使相关功能单独免费提供。
+## Changes and New Works License
 
-免费提供、尚未盈利、仅收取成本或声称用于学习，不会自动使商业用途获得许可。
+The licensor grants you an additional copyright license to
+make changes and new works based on the software for any
+permitted purpose.
 
-4. 保留声明与第三方权利
+## Patent License
 
-不得删除或改变版权和许可声明，不得暗示权利人或示例场馆为使用者提供背书。
-本许可证不授予任何商标、场馆品牌、文物形象或第三方内容的使用权。
+The licensor grants you a patent license for the software that
+covers patent claims the licensor can license, or becomes able
+to license, that you would infringe by using the software.
 
-第三方代码、依赖、模型权重、数据和素材继续遵循各自的许可证；本许可证
-不改变其权利归属，不对其附加限制，也不授予使用者原本不具备的第三方权利。
+## Noncommercial Purposes
 
-5. 终止
+Any noncommercial purpose is a permitted purpose.
 
-违反本许可证时，本许可证授予的权利自动终止，使用者必须停止未经授权的
-使用。恢复许可须取得权利人的书面同意。适用法律规定的权利和例外不受影响。
+## Personal Uses
 
-6. 免责
+Personal use for research, experiment, and testing for
+the benefit of public knowledge, personal study, private
+entertainment, hobby projects, amateur pursuits, or religious
+observance, without any anticipated commercial application,
+is use for a permitted purpose.
 
-在适用法律允许的最大范围内，本作品按“现状”提供，不作任何明示或默示
-保证，包括适销性、特定用途适用性或不侵权保证。权利人及贡献者不对因使用
-本作品产生的损失承担责任。
+## Noncommercial Organizations
 
-7. 其他
+Use by any charitable organization, educational institution,
+public research organization, public safety or health
+organization, environmental protection organization,
+or government institution is use for a permitted purpose
+regardless of the source of funding or obligations resulting
+from the funding.
 
-本许可证是一项限制使用范围的源码可用许可，不是允许任意用途的开源许可。
-如需其他授权，请通过本仓库联系维护者。中英文条款含义不一致时，以中文为准。
+## Fair Use
 
+You may have "fair use" rights for the software under the
+law. These terms do not limit them.
 
-English terms
+## No Other Rights
 
-1. Scope
+These terms do not allow you to sublicense or transfer any of
+your licenses to anyone else, or prevent the licensor from
+granting licenses to anyone else.  These terms do not imply
+any other licenses.
 
-This license covers the source code, documentation, example configurations,
-icons, and other original resources in this repository for which the WishStone
-rights holders own copyright, collectively the Work. Third-party materials
-are excluded.
+## Patent Defense
 
-2. Free personal learning permission
+If you make any written claim that the software infringes or
+contributes to infringement of any patent, your patent license
+for the software granted under these terms ends immediately. If
+your company makes such a claim, your patent license ends
+immediately for work on behalf of your company.
 
-Subject to these terms, the rights holders grant natural persons a free,
-non-exclusive, non-sublicensable, limited license to view, download, copy, run,
-and modify the Work solely for personal, noncommercial learning, research,
-and private experimentation.
+## Violations
 
-Forking on a code-hosting platform and sharing source code or modified source
-code free of charge are permitted solely for those personal learning purposes.
-Copies must retain this license, copyright notices, and third-party notices;
-modifications must be identified, and recipients must remain subject to the
-same restrictions. This permission does not include operating public
-applications, hosted services, or business activities.
+The first time you are notified in writing that you have
+violated any of these terms, or done anything with the software
+not covered by your licenses, your licenses can nonetheless
+continue if you come into full compliance with these terms,
+and take practical steps to correct past violations, within
+32 days of receiving notice.  Otherwise, all your licenses
+end immediately.
 
-Personal learning excludes conducting business, developing deliverables, or
-deploying services for an employer, customer, or other organization. Use by
-organizations or institutions, and any use outside this grant, requires
-separate prior written authorization from the rights holders.
+## No Liability
 
-3. No commercial or profit-making use
+***As far as the law allows, the software comes as is, without
+any warranty or condition, and the licensor will not be liable
+to you for any damages arising out of these terms or the use
+or nature of the software, under any kind of legal claim.***
 
-Without separate prior written authorization, the Work, modifications, and
-derivative works must not be used for any direct or indirect commercial,
-business, or profit-making purpose. Prohibited uses include:
+## Definitions
 
-- Selling, renting, paid licensing, subscriptions, advertising revenue,
-  sponsorship revenue, or revenue sharing involving the Work;
-- Paid development, customization, installation, deployment, maintenance,
-  training, consulting, or hosting services;
-- Commercial venues, paid experiences, commercial exhibitions, customer
-  projects, internal business operations, or marketing and lead generation;
-- Manufacturing or selling devices, souvenirs, NFC products, or customized
-  3D products incorporating the Work;
-- Integration into commercial software, hardware, platforms, or services,
-  even where the relevant feature is offered free of charge.
+The **licensor** is the individual or entity offering these
+terms, and the **software** is the software the licensor makes
+available under these terms.
 
-Offering something free of charge, operating without profit, charging only
-costs, or describing an activity as learning does not by itself authorize
-commercial use.
+**You** refers to the individual or entity agreeing to these
+terms.
 
-4. Notices and third-party rights
+**Your company** is any legal entity, sole proprietorship,
+or other kind of organization that you work for, plus all
+organizations that have control over, are under the control of,
+or are under common control with that organization.  **Control**
+means ownership of substantially all the assets of an entity,
+or the power to direct its management and policies by vote,
+contract, or otherwise.  Control can be direct or indirect.
 
-Do not remove or alter copyright or license notices, or imply endorsement by
-the rights holders or example venues. No rights to trademarks, venue brands,
-cultural object imagery, or third-party content are granted.
+**Your licenses** are all the licenses granted to you for the
+software under these terms.
 
-Third-party code, dependencies, model weights, data, and assets remain subject
-to their own licenses. This license does not change their ownership, impose
-additional restrictions on them, or grant third-party rights not otherwise held.
-
-5. Termination
-
-The rights granted by this license terminate automatically upon breach.
-Unauthorized use must cease. Reinstatement requires written consent from the
-rights holders. Rights and exceptions provided by applicable law are unaffected.
-
-6. Disclaimer
-
-To the maximum extent permitted by applicable law, the Work is provided AS IS,
-without express or implied warranties, including merchantability, fitness for
-a particular purpose, or noninfringement. The rights holders and contributors
-are not liable for losses arising from use of the Work.
-
-7. Other terms
-
-This is a source-available license with use restrictions, not an open-source
-license permitting use for any purpose. Contact the repository maintainers
-for other permissions. The Chinese terms prevail in case of inconsistency.
+**Use** means anything you do with the software requiring one
+of your licenses.
