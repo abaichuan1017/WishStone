@@ -71,7 +71,7 @@ flowchart LR
 
 也支持 `multipart/form-data`：`venue_id/device_id/user_text/audio/retain_audio`。存在非空 `user_text` 时按用户确认后的文本处理，并明确标记 `user-text` 来源；否则音频必须经 ASR。正文最多 1000 字；请求体上限 12 MB；参考客户端录音上限 60 秒。
 
-分类输出包含 `intent`（主类别）、`labels`（类别、关键词命中数与证据）、`emotion/safety/provider/needs_confirmation`。规则命中数不作为概率。示例情绪字段也是规则标签，没有经过心理测量。
+分类输出中，`intent` 为主类别，`labels` 包含类别、关键词命中数与证据，另有 `emotion/safety/provider/needs_confirmation` 字段。规则命中数不作为概率，情绪字段也仅为规则标签。
 
 ### ASR 适配器
 
@@ -95,7 +95,7 @@ flowchart LR
 
 硬件回读成功后以 `method=pn532` 和 `readback_url` 上报，附加 `X-Device-Token`，状态升级为 `device_verified`。浏览器相应为 `method=web-nfc`、`client_verified`。两者都必须匹配服务端准备的链接；它们是设备报告，不是服务端独立检测芯片。
 
-PN532 驱动只接收默认可写的 NTAG215 CC（`E1 10 3E 00`），拒绝其他内容。写入先把 NDEF TLV 标记为空，逐页写数据，最后提交首部并回读比对。失败时保留 `registered`，可对同一心愿重试，不自动覆盖别人的标签。
+PN532 驱动只接收默认可写的 NTAG215，CC 值为 `E1 10 3E 00`。写入先把 NDEF TLV 标记为空，逐页写数据，最后提交首部并回读比对。失败时保留 `registered`，可对同一心愿重试，不自动覆盖别人的标签。
 
 ### 3D 扩展点
 
