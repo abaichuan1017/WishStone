@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/wishstone-icon.png" width="104" height="104" alt="WishStone 愿石图标" />
+  <img src="app/static/brand/wishstone-icon-512.png" width="104" height="104" alt="WishStone 愿石图标" />
 </p>
 
 <h1 align="center">愿石 WishStone · 2.0</h1>
@@ -39,7 +39,7 @@ WishStone 将一句心愿转化为一份可被触摸、可再次访问的文化�
 
 </details>
 
-图标采用“圆石 × 声纹 × 微光”，提供 [SVG 源文件](app/static/brand/wishstone-icon.svg)、[透明单色标志](app/static/brand/wishstone-mark.svg) 与 [PNG 尺寸包](app/static/brand/)。设计说明见 [品牌资源](docs/brand.md)。
+图标以朱砂红与透白水晶呈现刻有 W 的愿石，提供 [SVG 源文件](app/static/brand/wishstone-icon.svg)、[透明单色标志](app/static/brand/wishstone-mark.svg) 与 [PNG 图标](app/static/brand/wishstone-icon-512.png)。
 
 ---
 
@@ -144,7 +144,7 @@ python3 -m unittest discover -s tests -v
 node --test tests/recorder.test.mjs
 ```
 
-测试覆盖 HTTP 主流程、ASR 协议、数据库迁移、标签并发占用、NDEF 编码与录音控制。具体结果见 [本地验证记录](docs/verification.md)。
+测试覆盖 HTTP 主流程、ASR 协议、数据库迁移、标签并发占用、NDEF 编码与录音控制。
 
 文字演示已可运行；真实 ASR、GPIO 录音、NFC 读写和 3D 打印仍需实机验收。内容检查目前使用有限规则，公众场景需另行完善审核。
 

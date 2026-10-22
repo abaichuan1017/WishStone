@@ -1,12 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
-  <title id="title">WishStone · 愿石</title>
-  <desc id="desc">温润的圆石承载声音，一点微光寄托心愿。</desc>
+  <title id="title">愿石 WishStone</title>
+  <desc id="desc">朱砂色底座上，一枚折射微光的水晶愿石刻着 W 与一点心愿。</desc>
   <defs>
-    <linearGradient id="ground" x1="128" y1="0" x2="896" y2="1024" gradientUnits="userSpaceOnUse"><stop stop-color="#416858"/><stop offset="1" stop-color="#1f4137"/></linearGradient>
-    <linearGradient id="jade" x1="270" y1="270" x2="650" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#f0f1df"/><stop offset="1" stop-color="#c4d5b8"/></linearGradient>
+    <linearGradient id="vermilion" x1="180" y1="64" x2="842" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c65b49"/><stop offset=".5" stop-color="#aa3b33"/><stop offset="1" stop-color="#812831"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientTransform="translate(330 148) rotate(61) scale(784 886)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f1b79b" stop-opacity=".22"/><stop offset="1" stop-color="#c65b49" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass-rim" x1="96" y1="0" x2="900" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".7"/><stop offset=".35" stop-color="#ffffff" stop-opacity="0"/><stop offset=".72" stop-color="#491523" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="surface-glint" x1="70" y1="70" x2="471" y2="589" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffebe1" stop-opacity=".18"/><stop offset="1" stop-color="#fff6ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="porcelain" x1="355" y1="263" x2="693" y2="779" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffdf8" stop-opacity=".98"/><stop offset=".43" stop-color="#fff4e9" stop-opacity=".79"/><stop offset=".78" stop-color="#f4d6c7" stop-opacity=".62"/><stop offset="1" stop-color="#eab2a4" stop-opacity=".86"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="290" y1="304" x2="681" y2="785" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7e8d9"/><stop offset="1" stop-color="#b48b79"/>
+    </linearGradient>
+    <linearGradient id="incision" x1="350" y1="450" x2="666" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8c2e2c"/><stop offset="1" stop-color="#b04a3b"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#571c24" flood-opacity=".28"/>
+    </filter>
+    <linearGradient id="bevel" x1="310" y1="280" x2="744" y2="735" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/><stop offset=".3" stop-color="#ffffff" stop-opacity=".1"/><stop offset=".65" stop-color="#c46b62" stop-opacity=".2"/><stop offset=".84" stop-color="#fffaf0" stop-opacity=".9"/><stop offset="1" stop-color="#ffffff" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="reflection" x1="310" y1="290" x2="555" y2="537" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".9"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="caustic" cx="0" cy="0" r="1" gradientTransform="translate(661 684) rotate(-39) scale(160 54)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffaf6" stop-opacity=".85"/><stop offset="1" stop-color="#fffaf6" stop-opacity="0"/>
+    </radialGradient>
+    <path id="stone" d="M356 274C451 235 616 242 701 312C786 382 800 534 751 641C702 748 565 799 449 780C334 761 257 656 252 542C247 429 272 309 356 274Z"/>
+    <path id="wish" d="M349 457L395 596C407 634 429 645 452 612L512 520L572 612C595 645 617 634 629 596L675 457"/>
+    <clipPath id="base-clip"><rect width="1024" height="1024" rx="230"/></clipPath>
+    <clipPath id="stone-clip"><use href="#stone"/></clipPath>
   </defs>
-  <rect width="1024" height="1024" rx="224" fill="url(#ground)"/>
-  <path d="M451 258C311 258 218 359 203 501C191 629 230 731 320 781C395 823 523 819 603 770C689 718 720 614 701 490C680 348 590 258 451 258Z" fill="url(#jade)"/>
-  <path d="M317 518V580M407 458V640M497 493V605M587 523V575" fill="none" stroke="#31594a" stroke-width="43" stroke-linecap="round"/>
-  <path d="M734 183C747 240 772 265 827 278C772 291 747 316 734 373C721 316 696 291 641 278C696 265 721 240 734 183Z" fill="#d4c393"/>
+  <rect width="1024" height="1024" rx="230" fill="url(#vermilion)"/>
+  <rect width="1024" height="1024" rx="230" fill="url(#light)"/>
+  <g clip-path="url(#base-clip)">
+    <path d="M0 0H850L0 685Z" fill="url(#surface-glint)"/>
+    <rect x="15" y="15" width="994" height="994" rx="217" fill="none" stroke="url(#glass-rim)" stroke-width="9"/>
+    <path d="M46 253C46 125 126 46 254 46H511" fill="none" stroke="#fff4e9" stroke-opacity=".14" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <rect x="1.5" y="1.5" width="1021" height="1021" rx="228.5" fill="none" stroke="#fff4e6" stroke-opacity=".16" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <use href="#stone" transform="translate(0 10)" fill="url(#edge)"/>
+    <use href="#stone" fill="url(#porcelain)"/>
+  </g>
+  <g clip-path="url(#stone-clip)">
+    <path d="M242 474L351 263L596 244L465 379Z" fill="url(#reflection)" opacity=".88"/>
+    <path d="M351 263L465 379L721 319L596 244Z" fill="#ffffff" fill-opacity=".16"/>
+    <path d="M721 319L687 464L776 561L794 415Z" fill="#ffffff" fill-opacity=".38"/>
+    <path d="M776 561L687 464L681 664L574 795L745 715Z" fill="#c16b69" fill-opacity=".1"/>
+    <path d="M319 659L449 780L681 664L576 726Z" fill="#fffaf4" fill-opacity=".19"/>
+    <path d="M256 560L319 659L449 780L340 735Z" fill="#ffffff" fill-opacity=".2"/>
+    <use href="#stone" fill="url(#caustic)"/>
+    <path d="M686 331L687 464L740 520" fill="none" stroke="#ffffff" stroke-opacity=".28" stroke-width="2"/>
+  </g>
+  <use href="#stone" fill="none" stroke="url(#bevel)" stroke-width="9"/>
+  <path d="M299 377C337 294 428 269 515 271" fill="none" stroke="#ffffff" stroke-opacity=".88" stroke-width="5" stroke-linecap="round"/>
+  <path d="M744 603C720 674 658 729 588 752" fill="none" stroke="#fff9f1" stroke-opacity=".8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M686 314V348M669 331H703" fill="none" stroke="#fffdf8" stroke-opacity=".65" stroke-width="2" stroke-linecap="round"/>
+  <use href="#wish" transform="translate(0 4)" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+  <use href="#wish" fill="none" stroke="url(#incision)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="512" cy="371" r="23" fill="#ffffff" fill-opacity=".7"/>
+  <circle cx="512" cy="368" r="23" fill="url(#incision)"/>
 </svg>

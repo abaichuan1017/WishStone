@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
-  <title id="title">WishStone · 愿石</title>
-  <desc id="desc">温润的圆石承载声音，一点微光寄托心愿。</desc>
-  <defs>
-    <linearGradient id="ground" x1="128" y1="0" x2="896" y2="1024" gradientUnits="userSpaceOnUse"><stop stop-color="#416858"/><stop offset="1" stop-color="#1f4137"/></linearGradient>
-    <linearGradient id="jade" x1="270" y1="270" x2="650" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#f0f1df"/><stop offset="1" stop-color="#c4d5b8"/></linearGradient>
-  </defs>
-  <rect width="1024" height="1024" rx="224" fill="url(#ground)"/>
-  <path d="M451 258C311 258 218 359 203 501C191 629 230 731 320 781C395 823 523 819 603 770C689 718 720 614 701 490C680 348 590 258 451 258Z" fill="url(#jade)"/>
-  <path d="M317 518V580M407 458V640M497 493V605M587 523V575" fill="none" stroke="#31594a" stroke-width="43" stroke-linecap="round"/>
-  <path d="M734 183C747 240 772 265 827 278C772 291 747 316 734 373C721 316 696 291 641 278C696 265 721 240 734 183Z" fill="#d4c393"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" rx="230" fill="#aa3b33"/>
+  <path d="M356 274C451 235 616 242 701 312C786 382 800 534 751 641C702 748 565 799 449 780C334 761 257 656 252 542C247 429 272 309 356 274Z" fill="#fff7ec"/>
+  <path d="M349 457L395 596C407 634 429 645 452 612L512 520L572 612C595 645 617 634 629 596L675 457" fill="none" stroke="#aa3b33" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="512" cy="368" r="26" fill="#aa3b33"/>
 </svg>
