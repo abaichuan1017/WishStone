@@ -15,7 +15,7 @@ import wave
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from ntag215 import connect_pn532
+from ntag215 import connect_pcr532
 
 BASE = os.environ.get("WISHSTONE_API_URL", "http://127.0.0.1:8080").rstrip("/")
 DEVICE_TOKEN = os.environ.get("DEVICE_TOKEN", "")
@@ -63,7 +63,7 @@ def main():
     # Check that cross-device NFC links are configured before accepting wishes.
     if not api("/api/health")["public_url_configured"]:
         raise SystemExit("请先在主服务配置 PUBLIC_BASE_URL，确保纪念页可跨设备访问。")
-    writer = connect_pn532()
+    writer = connect_pcr532()
     button = Button(int(os.environ.get("BUTTON_GPIO", "17")), pull_up=True, bounce_time=0.05)
     led = LED(int(os.environ["STATUS_LED_GPIO"])) if os.environ.get("STATUS_LED_GPIO") else None
     released = threading.Event()
@@ -139,6 +139,7 @@ def main():
         released.set(); button.close()
         if led:
             led.close()
+        writer.close()
 
 
 if __name__ == "__main__":

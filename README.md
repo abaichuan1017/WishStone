@@ -63,7 +63,9 @@ WishStone 将一句心愿转化为一份可被触摸、可再次访问的文化�
            手机轻触纪念品，重访这份心愿
 ```
 
-目标参考硬件：**树莓派 4 + 麦克风 + 按钮 + NFC 读写模块 + NTAG215**。当前提供 PN532 I²C 驱动示例；NTAG215 是标签型号，其他读写模块需要替换驱动。
+硬件：**树莓派 4 + 麦克风 + 按钮 + PCR532 USB 读写器 + NTAG215 NFC 贴纸**。
+
+PCR532 通过 USB 连接树莓派；NTAG215 是 NFC 贴纸内的芯片型号。
 
 ## 先在电脑体验
 
@@ -95,7 +97,7 @@ VENUE_CONFIG=my-venue.json python3 app/server.py
 
 ## SenseVoice 与树莓派
 
-提供独立的 **SenseVoice INT8 / sherpa-onnx** HTTP 服务；核心业务无需安装 PyTorch。GPIO 按钮录音也可在无显示器模式运行。安装、模型下载、PN532 接线和 systemd 示例见 [树莓派部署](docs/raspberry-pi.md)。
+提供独立的 **SenseVoice INT8 / sherpa-onnx** HTTP 服务；核心业务无需安装 PyTorch。GPIO 按钮录音也可在无显示器模式运行。安装、PCR532 USB 连接检查、按钮接线与启动方法见 [树莓派部署](docs/raspberry-pi.md)。
 
 ```bash
 # 安装并下载模型后，在两个终端分别运行：
@@ -108,7 +110,7 @@ ASR_HTTP_URL=http://127.0.0.1:8091/transcribe python3 app/server.py
 ## NFC 与 3D 定制
 
 - 标签写入的是**纪念页链接**，音频、文本和 3D 文件不塞进芯片。
-- PN532 驱动检查 NTAG215 默认 CC 所声明的 **496 字节 NDEF 区域**，只写数据页，写后逐字节回读；不修改锁位、密码和配置页。
+- PCR532 通过 USB 将链接写入 NTAG215 贴纸，写后回读校验，不修改标签的锁定和密码配置。
 - 本地 `localhost` 链接仅供预览。写入实物前设置 `PUBLIC_BASE_URL` 为手机可访问的稳定地址，并验证访问路径。
 - 桌面浏览器可复制链接给外部写卡工具；兼容设备另提供 Web NFC 路径。主硬件路径仍是树莓派读写器。
 - 绑定状态如下。服务端记录设备回执，实物效果仍需验收。
@@ -131,7 +133,8 @@ app/static/                     参考装置界面、按住录音、纪念页
 examples/venues/                良渚示例与自定义场景模板
 services/sensevoice_server.py    可选 SenseVoice ONNX 服务
 hardware/pi_station.py          树莓派实体按钮与录音工作流
-hardware/ntag215.py              NDEF 编码、PN532 写入和回读
+hardware/ntag215.py              PCR532 USB 连接、NDEF 写入与回读
+hardware/check_reader.py         读写器连接与贴纸检查
 requirements-asr.txt             可选 ASR 依赖
 requirements-pi.txt              可选硬件依赖
 deploy/                         systemd 参考文件

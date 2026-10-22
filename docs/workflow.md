@@ -95,7 +95,7 @@ flowchart LR
 
 硬件回读成功后以 `method=pn532` 和 `readback_url` 上报，附加 `X-Device-Token`，状态升级为 `device_verified`。浏览器相应为 `method=web-nfc`、`client_verified`。两者都必须匹配服务端准备的链接；它们是设备报告，不是服务端独立检测芯片。
 
-PN532 驱动只接收默认可写的 NTAG215，CC 值为 `E1 10 3E 00`。写入先把 NDEF TLV 标记为空，逐页写数据，最后提交首部并回读比对。失败时保留 `registered`，可对同一心愿重试，不自动覆盖别人的标签。
+PCR532 USB 读写器通过 PN532 串口协议连接，驱动只接收默认可写的 NTAG215，CC 值为 `E1 10 3E 00`。写入先把 NDEF TLV 标记为空，逐页写数据，最后提交首部并回读比对。失败时保留 `registered`，可对同一心愿重试，不自动覆盖别人的标签。
 
 ### 3D 扩展点
 

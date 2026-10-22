@@ -3,4 +3,5 @@ gpiozero>=2,<3
 lgpio>=0.2,<1
 sounddevice>=0.5,<1
 adafruit-blinka>=8,<9
-adafruit-circuitpython-pn532>=2,<3
+adafruit-circuitpython-pn532>=2.4.9,<3
+pyserial>=3.5,<4

@@ -26,8 +26,13 @@ def encode_uri_tlv(url: str) -> bytes:
 
 
 class NTAG215Writer:
-    def __init__(self, reader):
+    def __init__(self, reader, connection=None):
         self.reader = reader
+        self.connection = connection
+
+    def close(self):
+        if self.connection is not None:
+            self.connection.close()
 
     def read_page(self, page: int) -> bytes:
         data = self.reader.ntag2xx_read_block(page)
@@ -83,16 +88,30 @@ class NTAG215Writer:
         return {"nfc_uid": uid_text, "readback_url": url, "ndef_bytes": len(tlv), "method": "pn532", "status": "readback_verified"}
 
 
-def connect_pn532():
+def connect_pcr532(port: str | None = None):
+    """Connect a PCR532 USB reader using the PN532 HSU serial protocol."""
     import os
-    import board
-    import busio
-    from digitalio import DigitalInOut
-    from adafruit_pn532.i2c import PN532_I2C
+    import serial
+    from serial.tools import list_ports
+    from adafruit_pn532.uart import PN532_UART
 
-    # H_Request/P32 is required for wakeup on the documented Adafruit Pi wiring.
-    req_pin = DigitalInOut(getattr(board, "D" + os.environ.get("PN532_REQ_GPIO", "12")))
-    reset_pin = DigitalInOut(getattr(board, "D" + os.environ.get("PN532_RESET_GPIO", "6")))
-    reader = PN532_I2C(busio.I2C(board.SCL, board.SDA), req=req_pin, reset=reset_pin)
-    reader.SAM_configuration()
-    return NTAG215Writer(reader)
+    port = port or os.environ.get("NFC_SERIAL_PORT", "").strip()
+    if not port:
+        # Identify the USB bridge, then verify the NFC controller below.
+        candidates = [item.device for item in list_ports.comports()
+                      if (item.vid, item.pid) == (0x1A86, 0x7523)]
+        if not candidates:
+            raise RuntimeError("未找到 PCR532 USB 串口，请检查 USB 连接，或设置 NFC_SERIAL_PORT")
+        if len(candidates) != 1:
+            raise RuntimeError("检测到多个 CH340 串口，请用 NFC_SERIAL_PORT 指定 PCR532")
+        port = candidates[0]
+    connection = serial.Serial(port, baudrate=115200, timeout=0.1, write_timeout=1, exclusive=True)
+    try:
+        reader = PN532_UART(connection, debug=False)
+        if reader.firmware_version[0] != 0x32:
+            raise RuntimeError("读写器未返回 PN532 固件标识，请核对 PCR532 的型号和 USB 协议")
+        reader.SAM_configuration()
+        return NTAG215Writer(reader, connection)
+    except BaseException:
+        connection.close()
+        raise
