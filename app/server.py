@@ -224,7 +224,7 @@ class WishStoneHandler(SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = unquote(parsed.path)
         if path == "/api/health":
-            return json_response(self, {"version": "2.0.0-dev", "asr": "configured" if os.environ.get("ASR_HTTP_URL") else "not-configured", "nlp": "local-rules", "tts": "not-configured", "model_3d": "brief-only", "nfc": "web-nfc-or-external-writer", "public_url_configured": bool(os.environ.get("PUBLIC_BASE_URL"))})
+            return json_response(self, {"version": "2.0.0", "asr": "configured" if os.environ.get("ASR_HTTP_URL") else "not-configured", "nlp": "local-rules", "tts": "not-configured", "model_3d": "brief-only", "nfc": "web-nfc-or-external-writer", "public_url_configured": bool(os.environ.get("PUBLIC_BASE_URL"))})
         if path == "/api/venues":
             with closing(get_conn()) as conn:
                 active = {r["id"] for r in conn.execute("SELECT id FROM venue WHERE is_active=1")}
