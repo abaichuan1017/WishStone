@@ -1,0 +1,16 @@
+[Unit]
+Description=WishStone SenseVoice ASR adapter
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/wishstone
+EnvironmentFile=/opt/wishstone/.env
+ExecStart=/opt/wishstone/.venv/bin/python services/sensevoice_server.py
+Restart=on-failure
+RestartSec=10
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -4,3 +4,14 @@ app/wishstone.db
 app/storage/user_audio/*
 app/storage/ai_audio/*
 !.gitkeep
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+models/
+app/backups/
+*.db-wal
+*.db-shm
+.playwright-cli/
+output/

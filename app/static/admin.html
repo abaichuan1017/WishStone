@@ -13,10 +13,10 @@
         <p class="subtitle">输入管理 Token 后可查看统计、审核会话、修改 Prompt</p>
 
         <div class="row">
-          <input id="adminToken" placeholder="X-Admin-Token" />
+          <input id="adminToken" type="password" placeholder="X-Admin-Token" autocomplete="off" />
           <button id="loadBtn" class="btn">加载数据</button>
         </div>
-        <p class="meta">默认 Token: <code>wishstone-admin</code>（可通过环境变量 <code>ADMIN_TOKEN</code> 覆盖）</p>
+        <p class="meta">管理接口默认关闭。先在服务端设置 <code>ADMIN_TOKEN</code>。</p>
 
         <section class="block">
           <h2>统计概览</h2>
@@ -24,7 +24,7 @@
         </section>
 
         <section class="block">
-          <h2>Prompt 配置（良渚）</h2>
+          <h2>场景配置</h2><label for="adminVenue">场馆</label><select id="adminVenue"></select><p class="meta">场景目录来自 VENUE_CONFIG。当前祝福使用本地模板；下方 Prompt 配置保存备用，尚未用于 LLM 生成。</p>
           <div class="row">
             <input id="roleName" placeholder="角色名" />
           </div>

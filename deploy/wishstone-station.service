@@ -1,0 +1,17 @@
+[Unit]
+Description=WishStone Raspberry Pi physical station
+After=wishstone.service sound.target
+Wants=wishstone.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/wishstone
+EnvironmentFile=/opt/wishstone/.env
+ExecStart=/opt/wishstone/.venv/bin/python hardware/pi_station.py
+Restart=on-failure
+RestartSec=10
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

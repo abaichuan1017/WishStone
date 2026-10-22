@@ -1,0 +1,3 @@
+# Optional SenseVoice service. Requires system ffmpeg; weights are separate.
+sherpa-onnx>=1.12,<2
+numpy>=1.26,<3

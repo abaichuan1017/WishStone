@@ -1,40 +1,4 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>愿石 WishStone - 专属祈福页</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <main class="container">
-      <section class="card blessing">
-        <h1>愿石 WishStone</h1>
-        <p class="subtitle" id="venueTitle">加载中...</p>
-
-        <div class="block">
-          <h2>你的心愿</h2>
-          <p id="wishText"></p>
-          <audio id="wishAudio" controls hidden></audio>
-        </div>
-
-        <div class="block">
-          <h2 id="roleTitle">守护者回应</h2>
-          <p id="replyText"></p>
-          <audio id="replyAudio" controls></audio>
-        </div>
-
-        <div class="block">
-          <h2>NFC 绑定</h2>
-          <div class="row">
-            <input id="nfcUid" placeholder="输入 NFC UID" />
-            <input id="sku" placeholder="纪念品 SKU（可选）" />
-          </div>
-          <button id="bindBtn" class="btn">绑定当前祈福记录</button>
-          <p id="bindResult" class="meta"></p>
-        </div>
-      </section>
-    </main>
-    <script src="/blessing.js"></script>
-  </body>
-</html>
+<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>愿石 · 你的心愿纪念</title><link rel="icon" href="/favicon.svg"/>
+  <link rel="apple-touch-icon" href="/brand/wishstone-icon-192.png" /><link rel="stylesheet" href="/v2.css"/></head>
+<body><main class="blessing-shell"><header class="blessing-header"><a class="brand" href="/"><img class="brand-icon" src="/brand/wishstone-icon.svg" width="43" height="43" alt="" /><span class="brand-name">愿石<span>WISHSTONE</span></span></a><a class="text-link" href="/">许一个新心愿 ↗</a></header><section class="blessing-content"><p class="eyebrow">A MEMORY TO RETURN TO</p><h1>此刻的心愿，<br/>一直在这里。</h1><p id="venueTitle" class="blessing-venue">正在寻找这份心意…</p><div id="memoryContent" hidden><div class="reply-rule"></div><p class="eyebrow">那天，你说</p><p id="wishText" class="recognized-wish"></p><audio id="wishAudio" controls hidden></audio><div id="memoryTags" class="tags"></div><div class="reply-rule"></div><p class="eyebrow">赠你一份祝福</p><p id="replyText" class="reply-text"></p><div id="memoryArt" class="selected-art" aria-hidden="true"></div><p id="souvenirName" style="text-align:center;font-family:var(--serif);font-size:20px"></p><p class="blessing-note">轻触纪念品，是重访这一刻的小小仪式。<br/>愿你带着这份心意，继续走向自己的生活。</p></div></section><p class="caption" style="text-align:center;margin-top:25px">拥有此链接的人可以查看这份心愿，请按自己的意愿分享。</p></main><script type="module" src="/blessing.js"></script></body></html>

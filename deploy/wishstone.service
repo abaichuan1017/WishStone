@@ -1,0 +1,17 @@
+[Unit]
+Description=WishStone workflow API
+After=network.target wishstone-asr.service
+Wants=wishstone-asr.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/wishstone
+EnvironmentFile=/opt/wishstone/.env
+ExecStart=/opt/wishstone/.venv/bin/python app/server.py
+Restart=on-failure
+RestartSec=5
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

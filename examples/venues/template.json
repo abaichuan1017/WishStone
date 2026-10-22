@@ -1,0 +1,28 @@
+{
+  "notice": "这是自行部署的场景示例，请根据实际文化语境、授权与纪念品目录配置。",
+  "venues": [{
+    "id": "my-venue",
+    "name": "你的场馆",
+    "type": "museum",
+    "city": "你的城市",
+    "theme": "此刻有声",
+    "description": "填写这一场所希望传达的文化意象与体验文案。",
+    "role_name": "心愿守护者",
+    "motif": "在地纹样、自然意象",
+    "device_id": "my-device-001",
+    "intent_rules": {"平安": ["平安", "健康", "家人"], "成长": ["学习", "工作", "毕业"]},
+    "blessings": {"平安": "愿你与牵挂的人安稳相伴。", "成长": "愿每一份努力都慢慢生长。", "人生": "愿你走向自己的方向。"},
+    "blessing_suffix": "愿这份心意，长久相伴。",
+    "souvenirs": [{
+      "sku": "MY-STONE-001",
+      "name": "心愿石",
+      "subtitle": "场馆文化意象纪念品",
+      "description": "填写纪念品的文化来源与心愿关联。",
+      "intents": ["平安", "成长", "人生"],
+      "motif": "bi",
+      "material": "按实物方案填写",
+      "customizable": true,
+      "design_parameters": {"size_mm": [45, 45, 12], "nfc_cavity_mm": [27, 27, 2], "output_formats": ["glb", "stl"]}
+    }]
+  }]
+}

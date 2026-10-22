@@ -1,37 +1,61 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>愿石 WishStone - 祈福装置</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <main class="container kiosk">
-      <section class="card">
-        <h1>愿石 WishStone</h1>
-        <p class="subtitle">良渚文化博物馆 · 祈福体验</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#274e42" />
+  <title>愿石 WishStone · 让心愿有形</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/brand/wishstone-icon-192.png" />
+  <link rel="stylesheet" href="/v2.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="愿石首页"><img class="brand-icon" src="/brand/wishstone-icon.svg" width="43" height="43" alt="" /><span class="brand-name">愿石<span>WISHSTONE</span></span></a>
+      <nav aria-label="主导航"><a class="nav-active" href="#experience">祈愿体验</a><a href="#collection">心愿纪念</a><a href="#about">关于愿石</a></nav>
+      <div class="venue-picker"><span class="location-icon" aria-hidden="true">⌖</span><label class="sr-only" for="venueSelect">选择体验场馆</label><select id="venueSelect" disabled><option>正在连接场馆…</option></select></div>
+    </header>
 
-        <label for="wishInput">输入或语音说出你的心愿</label>
-        <textarea id="wishInput" rows="4" placeholder="例如：希望今年考研顺利，也希望家人平安健康"></textarea>
-
-        <div class="row">
-          <button id="recordBtn" class="btn secondary">开始录音</button>
-          <button id="submitBtn" class="btn">生成祈福回应</button>
+    <main>
+      <section class="hero" id="experience" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-diamond"></span> 一念有声 · 心愿有形</p>
+          <h1 id="heroTitle">把心愿，<br />留在<span class="title-accent">此刻</span>。</h1>
+          <p class="hero-description">有些期待，值得被认真听见。<br />说出心中的愿望，让文化的温度，<br class="desktop-break" />化作一份可以带走的纪念。</p>
+          <div class="venue-story"><span class="story-rule"></span><div><span id="venueTheme">玉见初心</span><p id="venueDescription">让五千年的温润，收藏此刻的心意。</p></div></div>
+          <details class="text-entry" id="textEntry">
+            <summary>也可以写下心愿 <span aria-hidden="true">↗</span></summary>
+            <form id="wishForm">
+              <label for="wishInput">此刻，你有什么心愿？</label>
+              <textarea id="wishInput" rows="3" maxlength="1000" placeholder="希望今年顺利毕业，也愿家人健康平安。" required></textarea>
+              <div class="input-bottom"><span id="charCount">0 / 1000</span><button class="button primary" id="submitBtn" type="submit">安放心愿 <span aria-hidden="true">↗</span></button></div>
+            </form>
+          </details>
         </div>
 
-        <audio id="previewAudio" controls hidden></audio>
-
-        <section id="result" class="result" hidden>
-          <h2>守护者回应</h2>
-          <p id="replyText"></p>
-          <div class="row">
-            <a id="blessingLink" class="btn" target="_blank">打开专属回听页</a>
-          </div>
-          <div class="meta" id="meta"></div>
-        </section>
+        <div class="ritual-panel">
+          <div class="panel-heading"><span class="small-orbit" aria-hidden="true"></span><span>为一份心愿，留一刻安静</span><span class="panel-number">壹</span></div>
+          <div class="stone-stage" aria-hidden="true"><div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div><div class="stone-art" id="heroArt"></div><span class="vertical-poem">此 刻 有 声 · 心 愿 有 形</span><span class="stone-shadow"></span></div>
+          <div class="record-area"><p class="record-caption" id="recordCaption">静下心，轻轻说出你的愿望</p><button id="recordBtn" class="record-button" aria-label="按住说出心愿，松开结束录音" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3m-4 0h8"/></svg><span id="recordLabel">按住，说出心愿</span><span id="recordTimer" hidden>00:00</span></button><p class="record-hint" id="recordHint">按住开始录音 · 松开即可完成 · 最长 60 秒</p><div class="waveform" id="waveform" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <span class="panel-footnote">一枚愿石，一段属于你的回响</span>
+        </div>
       </section>
+
+      <div id="status" class="status-message" role="status" aria-live="polite" hidden></div>
+
+      <section class="journey" aria-label="体验流程"><div><span class="step-number">01</span><p>说出心愿<small>让期待被听见</small></p></div><span class="journey-line" aria-hidden="true"></span><div><span class="step-number">02</span><p>遇见心意<small>寻一件与你呼应的器物</small></p></div><span class="journey-line" aria-hidden="true"></span><div><span class="step-number">03</span><p>带走回响<small>轻触纪念品，再次遇见此刻</small></p></div></section>
+
+      <section id="result" class="result-section" aria-labelledby="resultTitle" tabindex="-1" hidden>
+        <div class="section-heading"><div><p class="eyebrow">YOUR WISH, A LITTLE CLOSER</p><h2 id="resultTitle">心愿，已有回响。</h2></div><button class="text-button" id="resetBtn">开启新的心愿 ↗</button></div>
+        <div class="result-layout"><article class="wish-response"><span class="quote-mark" aria-hidden="true">“</span><p id="recognizedWish" class="recognized-wish"></p><div id="intentTags" class="tags"></div><p id="classificationHint" class="caption"></p><div class="reply-rule"></div><p class="eyebrow">赠你一份祝福</p><p id="replyText" class="reply-text"></p><a id="blessingLink" class="text-link" target="_blank" rel="noopener">打开专属心愿页 <span aria-hidden="true">↗</span></a></article><article class="selected-card"><div id="selectedArt" class="selected-art" aria-hidden="true"></div><p class="eyebrow">为这份心愿挑选</p><h3 id="selectedName"></h3><p id="selectedReason"></p><div class="result-actions"><button id="nfcBtn" class="button primary">珍藏到纪念品 ↗</button><button id="designBtn" class="button light">3D 定制设计任务</button></div><p id="actionStatus" class="caption" role="status" aria-live="polite"></p><div id="nfcPanel" class="nfc-panel" hidden><p id="nfcNotice"></p><label for="nfcUrl">写入标签的链接</label><input id="nfcUrl" readonly /><div class="button-row"><button id="copyNfcBtn" class="button light">复制链接</button><button id="writeNfcBtn" class="button primary" hidden>写入并回读标签</button><button id="cancelNfcBtn" class="button light" hidden>取消写入</button></div><details><summary>使用外部读写器</summary><p>用读写器把上方链接写为 NDEF URL，回读确认后可登记 UID。登记仅保存关联关系。</p><form id="nfcRegisterForm"><label for="nfcUid">标签 UID</label><input id="nfcUid" placeholder="例如 04:A1:B2:C3:D4:E5:F6" required /><button class="button light" id="registerBtn" type="submit">仅登记绑定</button></form></details></div><div id="designPanel" class="design-panel" hidden><p id="designNotice"></p><pre id="designPrompt"></pre><button id="downloadDesignBtn" class="text-button">下载设计任务 JSON ↓</button></div></article></div>
+      </section>
+
+      <section class="collection-section" id="collection" aria-labelledby="collectionTitle"><div class="section-heading"><div><p class="eyebrow">A WISH TO HOLD</p><h2 id="collectionTitle">以器物，承心意。</h2></div><p class="section-note">源于在地文化，赠予独一无二的你。<br /><span>概念纪念品 · 可按场馆配置</span></p></div><div id="souvenirGrid" class="souvenir-grid"></div><p class="collection-notice">器物造型为概念示意，实际材质与制作方案由场馆确认。</p></section>
+      <section id="about" class="about-strip"><span class="brand-seal small" aria-hidden="true">愿</span><p>文化留住时间，<span>愿石留住心意。</span></p><p class="about-detail">让传统场所里的每一次驻足，<br />都成为一份有温度的个人记忆。</p></section>
     </main>
-    <script src="/kiosk.js"></script>
-  </body>
+    <footer><span>© 2026 愿石 WISHSTONE</span><span>一念之间，万物有声。</span><details class="device-details"><summary>设备状态</summary><p id="deviceStatus">正在检查连接…</p><p>录音仅用于本次转写，默认不保存原始音频。心愿文本会保存以供纪念页查看；拥有链接的人可访问。</p><a href="/admin">管理入口 ↗</a></details></footer>
+  </div>
+  <script type="module" src="/kiosk.js"></script>
+</body>
 </html>

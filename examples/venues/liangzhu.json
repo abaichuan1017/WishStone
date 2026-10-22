@@ -1,0 +1,61 @@
+{
+  "venues": [
+    {
+      "id": "venue-liangzhu",
+      "name": "良渚博物馆（示例场景）",
+      "type": "museum",
+      "city": "杭州",
+      "theme": "玉见初心",
+      "description": "让五千年的温润，收藏此刻的心意。",
+      "role_name": "文明守护者",
+      "motif": "玉琮、玉璧、稻穗",
+      "color": "jade",
+      "device_id": "device-demo-001",
+      "souvenirs": [
+        {
+          "sku": "LZ-CONG",
+          "name": "琮·向上",
+          "subtitle": "玉琮意象随身挂件",
+          "description": "以玉琮的方圆之形，寄托向上生长的心意。",
+          "intents": [
+            "学业",
+            "事业"
+          ],
+          "motif": "cong",
+          "material": "树脂 / 玉色复合材料",
+          "customizable": true
+        },
+        {
+          "sku": "LZ-BI",
+          "name": "璧·常安",
+          "subtitle": "玉璧意象平安石",
+          "description": "将圆满与牵挂，收进一枚温润的平安石。",
+          "intents": [
+            "健康",
+            "家庭",
+            "人生"
+          ],
+          "motif": "bi",
+          "material": "陶瓷 / 树脂",
+          "customizable": true
+        },
+        {
+          "sku": "LZ-RICE",
+          "name": "穗·有期",
+          "subtitle": "稻穗意象心愿牌",
+          "description": "耕耘有时，收获有期，愿每一份心意都慢慢丰盈。",
+          "intents": [
+            "财运",
+            "爱情"
+          ],
+          "motif": "seed",
+          "material": "木质 / 树脂",
+          "customizable": true
+        }
+      ],
+      "example": true,
+      "blessing_suffix": "愿这份心意，如玉温润，被岁月温柔照见。"
+    }
+  ],
+  "notice": "本目录为产品概念示例，未表示场馆授权、文物复刻许可、实际库存或实物已生产。"
+}

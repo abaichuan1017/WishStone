@@ -10,7 +10,9 @@ const forbiddenRulesEl = document.getElementById("forbiddenRules");
 const savePromptBtn = document.getElementById("savePromptBtn");
 const promptStatusEl = document.getElementById("promptStatus");
 
-const VENUE_ID = "venue-liangzhu";
+let VENUE_ID = "";
+const adminVenue = document.getElementById("adminVenue");
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
 
 function adminHeaders() {
   return {
@@ -19,7 +21,8 @@ function adminHeaders() {
   };
 }
 
-function formatSessionCard(s) {
+function formatSessionCard(raw) {
+  const s = Object.fromEntries(Object.entries(raw).map(([key, value]) => [key, escapeHTML(value)]));
   const createdAt = new Date(s.created_at).toLocaleString();
   const pageUrl = `/b/${s.blessing_page_slug}`;
   return `
@@ -135,3 +138,8 @@ sessionsEl.addEventListener("click", async (event) => {
 });
 
 loadBtn.addEventListener("click", loadAll);
+adminVenue.addEventListener("change", () => { VENUE_ID = adminVenue.value; loadPrompt().catch(err => { promptStatusEl.textContent = err.message; }); });
+fetchJSON("/api/venues").then(data => {
+  adminVenue.replaceChildren(...data.venues.map(venue => { const option = document.createElement("option"); option.value = venue.id; option.textContent = venue.name; return option; }));
+  VENUE_ID = data.venues[0]?.id || "";
+}).catch(err => { promptStatusEl.textContent = err.message; });

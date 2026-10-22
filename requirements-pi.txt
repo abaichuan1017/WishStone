@@ -1,0 +1,6 @@
+# Optional Raspberry Pi 4 adapters. Install on the Pi, not on a development Mac.
+gpiozero>=2,<3
+lgpio>=0.2,<1
+sounddevice>=0.5,<1
+adafruit-blinka>=8,<9
+adafruit-circuitpython-pn532>=2,<3
